@@ -143,7 +143,7 @@ position: sticky  ;
                 &nbsp;<div class="l">
         </p>
         Cust Id<br />
-        <asp:TextBox ID="custid_txr" runat="server"></asp:TextBox>
+        <asp:TextBox ID="custid_txr" runat="server" Enabled="False"></asp:TextBox>
         <br />
         &nbsp;
             <br />
