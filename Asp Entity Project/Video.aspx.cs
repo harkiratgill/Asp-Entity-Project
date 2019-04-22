@@ -26,6 +26,7 @@ namespace Asp_Entity_Project
             vidOBJ.VideoAdd(title_txt.Text, rate_txt.Text, Copies_txt.Text, genra_txt.Text, Plot_txt.Text, year_txt.Text);//this method add the movie
             vid_grid.DataSource = Db.Movies.ToList();//it refesh the data in table
             vid_grid.DataBind();
+            Response.Redirect("Video.aspx");
         }
 
         protected void Updatevid_btn_Click(object sender, EventArgs e)
@@ -33,6 +34,7 @@ namespace Asp_Entity_Project
             vidOBJ.VideoUpdate(Convert.ToInt32(movid_txt.Text), title_txt.Text, rate_txt.Text, Copies_txt.Text, genra_txt.Text, Plot_txt.Text, year_txt.Text);//this method updates the movie
             vid_grid.DataSource = Db.Movies.ToList();// it refesh the data in table
             vid_grid.DataBind();
+            Response.Redirect("Video.aspx");
         }
 
         protected void Deletevid_btn_Click(object sender, EventArgs e)
@@ -40,6 +42,7 @@ namespace Asp_Entity_Project
             vidOBJ.VideoDelte(Convert.ToInt32(movid_txt.Text));//this method delets the movie
             vid_grid.DataSource = Db.Movies.ToList();// it refesh the data in table
             vid_grid.DataBind();
+            Response.Redirect("Video.aspx");
         }
 
       
@@ -52,9 +55,9 @@ namespace Asp_Entity_Project
         {
             title_txt.Text = vid_grid.SelectedRow.Cells[3].Text;
             rate_txt.Text = vid_grid.SelectedRow.Cells[2].Text;
-            genra_txt.Text = vid_grid.SelectedRow.Cells[6].Text;//it puts the data from the table to text boxes
-            Plot_txt.Text = vid_grid.SelectedRow.Cells[5].Text;
-            Copies_txt.Text = vid_grid.SelectedRow.Cells[7].Text;
+            genra_txt.Text = vid_grid.SelectedRow.Cells[8].Text;//it puts the data from the table to text boxes
+            Plot_txt.Text = vid_grid.SelectedRow.Cells[7].Text;
+            Copies_txt.Text = vid_grid.SelectedRow.Cells[6].Text;
             year_txt.Text = vid_grid.SelectedRow.Cells[4].Text;
             movid_txt.Text = vid_grid.SelectedRow.Cells[1].Text;
         }

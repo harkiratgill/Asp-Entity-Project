@@ -33,9 +33,10 @@ namespace Asp_Entity_Project
         protected void Custadd_Click(object sender, EventArgs e)
         {
             cs.Cust_add(firstname_txt.Text, lastname_txt.Text, phone_txt.Text, address_txt.Text);//this is method is used to add customer
-            
+
             Cust_grid.DataSource = Db.Customers.ToList(); ;//this puts the data from the server to the table
             Cust_grid.DataBind();
+            Response.Redirect("Customer.aspx");
         }
 
         protected void CustUP_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace Asp_Entity_Project
             cs.CustUpdate(Convert.ToInt32(custid_txr.Text), firstname_txt.Text, lastname_txt.Text, phone_txt.Text, address_txt.Text);//this is used to update customer
             Cust_grid.DataSource = Db.Customers.ToList();
             Cust_grid.DataBind();
+            Response.Redirect("Customer.aspx");
         }
 
         protected void CustDel_Click(object sender, EventArgs e)
@@ -50,6 +52,7 @@ namespace Asp_Entity_Project
             cs.CustDelte(Convert.ToInt32(custid_txr.Text)); //this method is used to delet the customer
             Cust_grid.DataSource = Db.Customers.ToList(); //this puts the data from the server to the table
             Cust_grid.DataBind();
+            Response.Redirect("Customer.aspx");
         }
     }
 }
